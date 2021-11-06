@@ -23,28 +23,38 @@ var toppingsPrize = { pepperoni: 80, mushrooms: 60, onions: 50, extraCheese: 45 
 $(document).ready(function() {
     $("#btnAdd").click(function(event) {
         event.preventDefault();
+        $("#checkOut").show();
+        $("#alert").hide();
         //user input
         var name = $("#userName").val();
         var size = $("#size").val();
         var crust = $("#crust").val();
         var toppings = $("#toppings").val();
 
-        // create construct for user inputs
+        // create an instance, for user inputs
         var newUser = new userInputs(sizePrize[size], crustPrize[crust], toppingsPrize[toppings]);
 
-        //Append row cost to user choice
+        //Call prototype function, assign to var total
         var total = newUser.userTotal();
 
+        //include order number
+        orderNum = 1;
+        $("p #rowTotal").each(function() {
+            orderNum += 1;
+        });
+
+        //Append user selected orders. (name & pizza size are required fields)
         if (name > "" && size > "") {
-            $("#orderSummary").append("<hr><p id='order'>Pizza size: <span id='priceSpan'>" + size + "</span> Crust: <span id='priceSpan'>" + crust + "</span> Toppings: <span id='priceSpan'>" + toppings + "</span> @KES. " + "<span id = 'rowTotal'>" + total + "</span>" + "</p>");
+            $("#orderSummary").append("<p id='order'> <b>Order No. " + orderNum + "</b>: Size: <span id='priceSpan'>" + $("#size option:selected").text() + "</span> Crust: <span id='priceSpan'>" + $("#crust option:selected").text() + "</span> Toppings: <span id='priceSpan'>" + $("#toppings option:selected").text() + "</span> Total KES. " + "<span id = 'rowTotal'>" + total + "</span>" + "</p>");
         }
 
-        //include grand total
+        //Append grand Totals
         grantTotal = 0;
         $("p #rowTotal").each(function() {
             grantTotal += +$(this).text() || 0;
         });
-        $("#totals p").text("GRAND TOTAL: KES." + grantTotal);
+
+        $("#totals p").text("GRAND TOTAL: KES. " + grantTotal);
 
         // 
     })
@@ -53,14 +63,17 @@ $(document).ready(function() {
 
 //Check-out and payment & order deliverly
 $(document).ready(function() {
+
     //If deliverly is not checked, hide location text-box
     $("#deliverly").click(function() {
+        $("#alert").hide();
         if ($("#deliverly").is(":checked")) $("#location").show();
         else $("#location").hide();
     })
 
     $("#checkoutBtn").click(function(event) {
         event.preventDefault();
+        $("#alert").show();
 
         var name = $("#userName").val();
         //Check if homedeliverly is checked//
@@ -68,7 +81,7 @@ $(document).ready(function() {
             var location = $("#location").val();
 
             //alert user
-            $("#alert1").text("Total Amount + Delivery Fee: " + (parseInt(grantTotal) + 200));
+            $("#alert1").text("Total Amount + Delivery Fee = KES. " + (parseInt(grantTotal) + 200));
             $("#alert2").text("Hello " + name + "!, Thank you for shopping with us, your order will be delivered at " + location);
         }
 
@@ -76,7 +89,7 @@ $(document).ready(function() {
         else if (!$("#deliverly").is(":checked") && $("p #rowTotal").text() != "") {
             //alert user
             $("#alert1").text("Total Amount: " + grantTotal);
-            $("#alert2").text("Hello " + name + "!, Thank you for shopping with us, please pick your order at NAIROBI CBD");
+            $("#alert2").text("Hello " + name + "!, Thank you for shopping with us, please collect your order at our pick point - NAIROBI CBD");
         }
     })
 })

@@ -14,10 +14,14 @@
 
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div id="bg-image" style="background-image: url(./img/img3.jpg);width: 100%;">
-                    <h3>Welcome to Online Pizza Shop</h3>
+
+        <!-- Background image -->
+        <div id="bg-image" style="background-image: url(./img/img1.jpeg);width: 100%;">
+            <div class="row">
+                <div class="col-md-4">
+
+                    <!-- title -->
+                    <h3>Online Pizza Shop</h3>
 
                     <!-- collect user name -->
                     <div id="name">
@@ -28,9 +32,9 @@
 
                     <!-- collect user pizza size preference -->
                     <div id="userInputs">
-                        <label id="lblSize">Choose Pizza Size</label>
+                        <label id="lblSize">Choose Pizza Size</label><br>
                         <select name="" id="size" value="" required>
-                            <option value="" selected disabled hidden>select here</option>
+                            <option value="" selected disabled hidden>-select here-</option>
                             <option value="small">small @400</option>
                             <option value="medium">medium @500</option>
                             <option value="large">large @600</option>
@@ -40,67 +44,68 @@
 
                     <!-- Collect user Crust preference -->
                     <div id="userInputs">
-                        <label for="crust">Choose Crust</label>
+                        <label for="crust">Choose Crust</label><br>
                         <select name="" id="crust" value="">
-                    <option value="" selected disabled hidden>select here</option>
-                    <option value="crispy">crispy @50</option>
-                    <option value="stuffed">stuffed @80</option>
-                    <option value="glutenFree">gluten-free @100</option>
-                </select>
+                            <option value="" selected disabled hidden>-none-</option>
+                            <option value="crispy">crispy @50</option>
+                            <option value="stuffed">stuffed @80</option>
+                            <option value="glutenFree">gluten-free @100</option>
+                        </select>
                     </div>
                     <br>
 
                     <!-- collect user inputs for Toppings -->
                     <div id="userInputs">
-                        <label for="toppings">Choose Toppings</label>
+                        <label for="toppings">Choose Toppings</label><br>
                         <select name="" id="toppings" value="">
-                    <option value="" selected disabled hidden>select here</option>
-                    <option value="pepperoni">pepperoni @80</option>
-                    <option value="mushrooms">mushrooms @60</option>
-                    <option value="onions">onions @50</option>
-                    <option value="extraCheese">extra cheese @45</option>
-                </select>
+                            <option value="" selected disabled hidden>-none-</option>
+                            <option value="pepperoni">pepperoni @80</option>
+                            <option value="mushrooms">mushrooms @60</option>
+                            <option value="onions">onions @50</option>
+                            <option value="extraCheese">extra cheese @45</option>
+                        </select>
                     </div>
 
                     <!-- Add submit button -->
                     <br>
-                    <button id="btnAdd">Add to Cart</button>
-                </div>
-            </div>
+                    <button id="btnAdd" class="btn btn-sm btn-warning">Add to Cart</button>
 
-            <!-- Add column to embed user order summary -->
-            <div class="col-md-6">
-                <div id="orderSummary">
-                    <h3>Order Summary</h3>
                 </div>
 
-                <!-- create an empty div to display totals -->
-                <div id="totals">
-                    <hr>
-                    <p></p>
-                </div>
+                <!-- Add column to embed user order summary -->
+                <div class="col-md-8">
+                    <div id="orderSummary">
+                        <h3>Your Order Summary</h3>
+                    </div>
 
-                <!-- Add deliverly information -->
-                <div>
-                    <input type="checkbox" name="deliverly" id="deliverly">
-                    <label id="lblDeliverly">Get Home Deliverly @KES.200</label>
-                    <br>
-                    <input type="text" name="location" id="location" placeholder="Enter your Location" required>
-                </div>
+                    <div id="checkOut">
+                        <!-- create an empty div to display totals -->
+                        <div id="totals">
+                            <p></p>
+                        </div>
 
-                <!-- Add a button for checking out -->
-                <div id="checkout">
-                    <br>
-                    <input type="submit" value="Check Out" id="checkoutBtn">
-                    <button onclick="window.location.reload();">reset</button>
-                </div>
+                        <!-- Add deliverly Location information -->
+                        <div>
+                            <input type="checkbox" name="deliverly" id="deliverly">
+                            <label id="lblDeliverly">Get Home Deliverly @KES.200</label>
+                            <br>
+                            <input type="text" name="location" id="location" placeholder="Enter your Location" required>
+                        </div>
 
-                <!-- User Alerts -->
-                <div id="alert">
-                    <hr>
-                    <p id="alert1"></p>
-                    <p id="alert2"></p>
-                    <hr>
+                        <!-- Add a button for checking out -->
+                        <div id="checkout">
+                            <br>
+                            <input type="submit" value="Check Out" id="checkoutBtn">
+                            <button class="btn btn-sm btn-success" onclick="window.location.reload();">Refresh</button>
+                        </div>
+
+                        <!-- User Alerts -->
+                        <div id="alert">
+                            <hr>
+                            <p id="alert1"></p>
+                            <p id="alert2"></p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

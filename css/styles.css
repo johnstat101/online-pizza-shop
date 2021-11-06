@@ -1,24 +1,42 @@
 h3 {
-    background-color: darkblue;
+    background-color: darkgreen;
     text-align: center;
     color: white;
     padding: 5px;
+    border-radius: 10%;
+}
+
+p {
+    background-color: white;
+    padding: 5px;
+    margin: 0;
+    border-radius: 10%;
+    border: solid 1px;
+}
+
+#userInputs {
+    text-align: center;
+    margin: 5px;
 }
 
 label {
-    display: inline-block;
-    width: 200px;
-    text-align: right;
-    background-color: darkblue;
+    align-content: center;
+    background-color: darkgreen;
     color: white;
+    padding: 5px;
+    border-radius: 20%;
+}
+
+input,
+select {
+    text-align: center;
+    font-weight: bold;
 }
 
 #name {
     text-align: center;
     width: auto;
     text-align: center;
-    margin-bottom: 5px;
-    border-bottom: 2px solid white;
 }
 
 #lblName:after {
@@ -35,20 +53,29 @@ label {
     font-weight: bold;
 }
 
+#btnAdd {
+    float: right;
+}
+
 #lblDeliverly {
     width: auto;
     background-color: lightsteelblue;
     font-weight: bold;
 }
 
+#checkOut {
+    display: none;
+}
+
 #location {
     display: none;
 }
 
-#totals {
+#totals p {
     font-weight: bold;
     background-color: turquoise;
-    text-align: center;
+    text-align: right;
+    padding-right: 10%;
 }
 
 #orderSummary p {
