@@ -1,5 +1,4 @@
-DELANI-STUDIO-WEBSITE
-By John Kimani (author)
+ONLINE-PIZZA-SHOP By John Kimani (author)
 
 ## Description
 
