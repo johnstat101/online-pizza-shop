@@ -19,91 +19,93 @@
         <div id="bg-image" style="background-image: url(./img/img1.jpeg);width: 100%;">
             <div class="row">
                 <div class="col-md-4">
+                    <div class="form-control">
+                        <!-- title -->
+                        <h4>Online Pizza Shop</h4>
 
-                    <!-- title -->
-                    <h3>Online Pizza Shop</h3>
+                        <!-- collect user name -->
+                        <div class="form-group" id="name">
+                            <label id="lblName">Enter Your Name</label>
+                            <input type="text" id="userName" class="form-control" required>
+                            <hr>
+                        </div>
 
-                    <!-- collect user name -->
-                    <div id="name">
-                        <label id="lblName">Enter Your Name</label>
-                        <input type="text" id="userName" required>
-                        <hr>
+                        <!-- collect user pizza size preference -->
+                        <div id="userInputs" class="form-group">
+                            <label id="lblSize">Choose Pizza Size</label><br>
+                            <select name="" id="size" class="form-control" required>
+                                <option value="" selected disabled hidden>-select here-</option>
+                                <option value="small">small @400</option>
+                                <option value="medium">medium @500</option>
+                                <option value="large">large @600</option>
+                            </select>
+                        </div>
+                        <br>
+
+                        <!-- Collect user Crust preference -->
+                        <div id="userInputs" class="form-group">
+                            <label for="crust">Choose Crust</label><br>
+                            <select name="" id="crust" class="form-control">
+                                <option value="" selected disabled hidden>-none-</option>
+                                <option value="crispy">crispy @50</option>
+                                <option value="stuffed">stuffed @80</option>
+                                <option value="glutenFree">gluten-free @100</option>
+                            </select>
+                        </div>
+                        <br>
+
+                        <!-- collect user inputs for Toppings -->
+                        <div id="userInputs" class="form-group">
+                            <label for="toppings">Choose Toppings</label><br>
+                            <select name="" id="toppings" class="form-control">
+                                <option value="" selected disabled hidden>-none-</option>
+                                <option value="pepperoni">pepperoni @80</option>
+                                <option value="mushrooms">mushrooms @60</option>
+                                <option value="onions">onions @50</option>
+                                <option value="extraCheese">extra cheese @45</option>
+                            </select>
+                        </div>
+
+                        <!-- Add submit button -->
+                        <br>
+                        <input type="submit" class="btn-sm btn-warning" id="btnAdd" value="Add to Cart">
                     </div>
-
-                    <!-- collect user pizza size preference -->
-                    <div id="userInputs">
-                        <label id="lblSize">Choose Pizza Size</label><br>
-                        <select name="" id="size" value="" required>
-                            <option value="" selected disabled hidden>-select here-</option>
-                            <option value="small">small @400</option>
-                            <option value="medium">medium @500</option>
-                            <option value="large">large @600</option>
-                        </select>
-                    </div>
-                    <br>
-
-                    <!-- Collect user Crust preference -->
-                    <div id="userInputs">
-                        <label for="crust">Choose Crust</label><br>
-                        <select name="" id="crust" value="">
-                            <option value="" selected disabled hidden>-none-</option>
-                            <option value="crispy">crispy @50</option>
-                            <option value="stuffed">stuffed @80</option>
-                            <option value="glutenFree">gluten-free @100</option>
-                        </select>
-                    </div>
-                    <br>
-
-                    <!-- collect user inputs for Toppings -->
-                    <div id="userInputs">
-                        <label for="toppings">Choose Toppings</label><br>
-                        <select name="" id="toppings" value="">
-                            <option value="" selected disabled hidden>-none-</option>
-                            <option value="pepperoni">pepperoni @80</option>
-                            <option value="mushrooms">mushrooms @60</option>
-                            <option value="onions">onions @50</option>
-                            <option value="extraCheese">extra cheese @45</option>
-                        </select>
-                    </div>
-
-                    <!-- Add submit button -->
-                    <br>
-                    <button id="btnAdd" class="btn btn-sm btn-warning">Add to Cart</button>
-
                 </div>
 
                 <!-- Add column to embed user order summary -->
                 <div class="col-md-8">
-                    <div id="orderSummary">
-                        <h3>Your Order Summary</h3>
-                    </div>
-
-                    <div id="checkOut">
-                        <!-- create an empty div to display totals -->
-                        <div id="totals">
-                            <p></p>
+                    <div class="form-control">
+                        <div id="orderSummary">
+                            <h4>Your Order Summary</h4>
                         </div>
 
-                        <!-- Add deliverly Location information -->
-                        <div>
-                            <input type="checkbox" name="deliverly" id="deliverly">
-                            <label id="lblDeliverly">Get Home Deliverly @KES.200</label>
-                            <br>
-                            <input type="text" name="location" id="location" placeholder="Enter your Location" required>
-                        </div>
+                        <div id="checkOut" class="form-group">
+                            <!-- create an empty div to display totals -->
+                            <div id="totals">
+                                <p></p>
+                            </div>
 
-                        <!-- Add a button for checking out -->
-                        <div id="checkout">
-                            <br>
-                            <input type="submit" value="Check Out" id="checkoutBtn">
-                            <button class="btn btn-sm btn-success" onclick="window.location.reload();">Refresh</button>
-                        </div>
+                            <!-- Add deliverly Location information -->
+                            <div>
+                                <input type="checkbox" name="deliverly" id="deliverly">
+                                <label id="lblDeliverly">Get Home Deliverly @KES.200</label>
+                                <br>
+                                <input type="text" id="location" placeholder="Enter your Location" required>
+                            </div>
 
-                        <!-- User Alerts -->
-                        <div id="alert">
-                            <hr>
-                            <p id="alert1"></p>
-                            <p id="alert2"></p>
+                            <!-- Add a button for checking out -->
+                            <div id="checkout">
+                                <br>
+                                <input type="submit" value="Check Out" id="checkoutBtn" class="btn-sm btn-warning">
+                                <button class="btn-sm btn-success" onclick="window.location.reload();">Refresh</button>
+                            </div>
+
+                            <!-- User Alerts -->
+                            <div id="alert" class="form-control">
+                                <hr>
+                                <p id="alert1"></p>
+                                <p id="alert2"></p>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,17 +1,9 @@
-h3 {
-    background-color: darkgreen;
+h4 {
+    background-color: rgb(111, 190, 137);
     text-align: center;
     color: white;
     padding: 5px;
     border-radius: 10%;
-}
-
-p {
-    background-color: white;
-    padding: 5px;
-    margin: 0;
-    border-radius: 10%;
-    border: solid 1px;
 }
 
 #userInputs {
@@ -20,11 +12,7 @@ p {
 }
 
 label {
-    align-content: center;
-    background-color: darkgreen;
-    color: white;
-    padding: 5px;
-    border-radius: 20%;
+    font-weight: bold;
 }
 
 input,
@@ -57,12 +45,6 @@ select {
     float: right;
 }
 
-#lblDeliverly {
-    width: auto;
-    background-color: lightsteelblue;
-    font-weight: bold;
-}
-
 #checkOut {
     display: none;
 }
@@ -78,8 +60,9 @@ select {
     padding-right: 10%;
 }
 
-#orderSummary p {
-    font-size: 14px;
+#order {
+    font-size: 13px;
+    text-align: justify;
 }
 
 #priceSpan {
